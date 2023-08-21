@@ -1,0 +1,82 @@
+// TwoSum.cpp : This file contains the 'main' function. Program execution begins and ends there.
+//This code is used to find a pair with sum K. Two maners will be proven, one using two iterators
+//from the start to the end of the array comparing if the sum of both prove to equal the target, 
+//The second version will use iterations of the array storing the values in a hashtable and comparing.
+
+#include <iostream>
+#include <map>
+#include <vector>
+using namespace std;
+
+void twoSum(int A[], int key) //ex. 1
+{
+	int i, j; //declaring variables. 
+	int n = sizeof(A); //By calling upon the sizeof function, we obtain the length of the array created.
+
+	for (i = 0; i < n; i++) {
+		for (j = i + 1; j < n; j++) {
+			if (A[i] + A[j] == key) {
+				cout << A[i] << " + " << A[j] << " = " << key;
+			}
+		}
+	}
+//The time complexity of this version is O(n^2) as we can observe the use of two for loops.
+
+vector<int> twoSum1(vector<int>& A, int key)// ex.2
+{
+	int i, n; 
+	sizeof(nums) = n;
+	int H[n];
+
+	for (i = 0; i < n; i++) {
+		H[i] = 0;
+	}
+
+	for (i = 0; i < n; i++) {
+		if (H[key - A[i]] != 0) {
+			return { A[i] "," key - A[i] };
+		}
+		H[A[i]]++;
+	return -1;
+	}
+	
+}
+//This version has a time complexity of O(n), however, the space requiered exceeds the previous
+//version due to the fact that a hashtable created has to match the highest value of the array.
+
+	void twoSum2(vector<int>&A, int tar, int max, int n) ex.3
+	{
+		int H[11] = { 0 };
+		for (int i = 0; i < 11; i++)
+		{
+			H[i] = 0;
+		}
+		int i;
+		for (i = 0; i < n; i++)
+		{
+			if (H[tar - A[i]] != 0)
+				cout << A[i] << " + " << tar - A[i] << " = " << tar;
+
+			else H[A[i]]++;
+		}
+	};
+
+int main()
+{
+	vector<int> vec{ 1, 3 ,5 ,6 ,3, 9, 11 };
+	int tar = 14;
+	int n = sizeof(vec);
+	//twoSum2(vec, tar, 11, n);
+
+	map <int, int> map;
+	for (auto& vec : vec) 
+	{
+		map[vec++];
+	}
+	for (auto& a : map) {
+		cout << a.first << a.second << endl;
+	}
+		return 0;
+}
+
+   
