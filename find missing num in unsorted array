@@ -1,0 +1,27 @@
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+
+int findMissing(int A[], int n) 
+{
+	int total = 0, suptotal = 0;
+	for (int i = 0; i <= n; i++) { total = total + i;  }
+	for (int j = 0; j < n; j++) { suptotal = suptotal + A[j]; }
+
+	return total - suptotal;
+
+}
+
+int main()
+{
+	int A[] = { 1, 3, 0 };
+	int n = sizeof(A)/sizeof(A[0]);
+
+	int num = findMissing(A, n);
+	cout << endl << num;
+
+	//Time complexity O(n) due to the two for loops. Space complexity O(n), using the summation of the values found in the array. 
+
+	return 0;
+}
+
