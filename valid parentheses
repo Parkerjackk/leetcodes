@@ -1,0 +1,35 @@
+    bool isValid(string s) {
+     stack<char> st;
+     int n = s.size();
+
+     if(n == 1){ return false; }
+
+     for (int i = 0; i < n; i++)
+     {
+         if(st.empty() && s[i] == ')' || st.empty() && s[i] == ']' || st.empty() && s[i] == '}')
+         {   
+             return false; 
+         }
+         if(s[i] ==')' || s[i] == ']' || s[i] == '}') 
+         {
+            st.push(s[i]); 
+         }
+         else 
+         {
+             char t = st.top();
+             if ((s[i] == '}' && t =='{' && (!st.empty())) || (s[i] == ')' && t =='(' && (!st.empty())) || (s[i] == ']' && t =='[' && (!st.empty())))
+             {
+                st.pop();
+             }
+             else return false;
+         } 
+     }
+    
+    if (st.empty())
+    { 
+        return true; 
+    }
+   
+    else return false; 
+
+    }
